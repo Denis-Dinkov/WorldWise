@@ -1,4 +1,5 @@
-import { useState, createContext, useEffect } from "react";
+/* eslint-disable react-refresh/only-export-components */
+import { useState, createContext, useEffect, useContext } from "react";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -14,6 +15,7 @@ function CitiesProvider({ children }) {
         setIsLoading(true);
         const res = await fetch(`${BASE_URL}/cities`);
         const data = await res.json();
+        console.log(data);
         setCities(data);
       } catch {
         console.error("Error fetching data!");
@@ -37,4 +39,11 @@ function CitiesProvider({ children }) {
   );
 }
 
-export { CitiesProvider };
+function useCities() {
+  const context = useContext(CitiesContext);
+  if (context === undefined)
+    throw new Error("CitiesContext was used outside the CitiesProvider");
+  return context;
+}
+
+export { CitiesProvider, useCities };

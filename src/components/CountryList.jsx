@@ -2,9 +2,13 @@ import styles from "./CountryList.module.css";
 import Spinner from "./Spinner";
 import Message from "./Message";
 import CountryItem from "./CountryItem";
+import { useCities } from "../contexts/CitiesContext";
 
-export default function CountryList({ cities, isLoading }) {
+export default function CountryList() {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) return <Spinner />;
+
   if (!cities.length)
     return (
       <Message
@@ -12,13 +16,13 @@ export default function CountryList({ cities, isLoading }) {
       />
     );
 
-  console.log(cities);
   const countries = cities.reduce((arr, city) => {
     if (!arr.map((el) => el.city).includes(city)) {
       return [...arr, { country: city.country, emoji: city.emoji }];
     }
     return arr;
   }, []);
+
   return (
     <ul className={styles.countryList}>
       {countries.map((country) => (
