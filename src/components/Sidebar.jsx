@@ -11,7 +11,7 @@ export default function Sidebar() {
 
       <Outlet />
       <footer className={styles.footer}>
-        <p className={styles.copyright}>&copy; 2021 Travelicious</p>
+        <p className={styles.copyright}>&copy; 2024</p>
       </footer>
     </div>
   );

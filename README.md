@@ -1,8 +1,18 @@
-# React + Vite
+# WorldWise
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is about saving your favorite vacation locations on a map.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project was developed to practice advanced React skills, such as React Router, Context API, and advanced patterns.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/Denis-Dinkov/MovieMate.git`
+2. Navigate to the project directory: `cd MovieMate`
+3. Run npm install to install dependencies.
+4. Run npm run dev to start the project.
+
+![Example Image](/public/screenshot.png)
