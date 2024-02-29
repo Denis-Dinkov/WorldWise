@@ -8,6 +8,7 @@ import Button from "./Button";
 import BackButton from "./BackButton";
 import Message from "./Message";
 import Spinner from "./Spinner";
+import { useCities } from "../contexts/CitiesContext";
 
 const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
@@ -21,6 +22,7 @@ function convertToEmoji(countryCode) {
 
 function Form() {
   const [cityName, setCityName] = useState("");
+  const { createCity } = useCities();
   const [country, setCountry] = useState("");
   const [lat, lng] = useUrlPosition();
   const [date, setDate] = useState(new Date());
@@ -75,7 +77,7 @@ function Form() {
       position: { lat, lng },
     };
 
-    console.log(newCity);
+    createCity(newCity);
   }
 
   if (!lat & !lng)
